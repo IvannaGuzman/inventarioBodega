@@ -23,7 +23,7 @@ import { PersonaModule } from './persona/persona.module';
           type: config.get<string>('DB_TYPE') as any,
           host: config.get<string>('DB_HOST'),
           port: parseInt(config.get<string>('DB_PORT') || '5432', 10),
-          username: config.get<string>('DB_USER'),
+          username: config.get<string>('DB_USERNAME'),
           password: config.get<string>('DB_PASSWORD'),
           database: config.get<string>('DB_NAME'),
           synchronize: config.get<string>('DB_SYNCHRONIZE') === 'true',
