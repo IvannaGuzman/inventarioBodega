@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { TipoProducto } from './../../tipo-producto/entities/tipo-producto.entity';
 import { RegistroProducto } from '../../registro-producto/entities/registro-producto.entity';
 import { Stock } from './../../stock/entities/stock.entity';
@@ -24,6 +24,7 @@ export class Producto {
   fechaIngreso: Date;
 
   @ManyToOne(() => TipoProducto, (tipo) => tipo.productos)
+  @JoinColumn({ name: 'id_tipo_producto' }) // 👈 este es el lugar correcto
   tipoProducto: TipoProducto;
 
   @OneToMany(() => Stock, (stock) => stock.producto)

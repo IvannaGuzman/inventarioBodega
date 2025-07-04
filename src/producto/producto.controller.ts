@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ProductoService } from './producto.service';
 import { CreateProductoDto } from './dto/create-producto.dto';
 import { UpdateProductoDto } from './dto/update-producto.dto';
+import { Producto } from './entities/producto.entity';
 
 @Controller('producto')
 export class ProductoController {
@@ -12,10 +13,11 @@ export class ProductoController {
     return this.productoService.create(createProductoDto);
   }
 
-  @Get()
-  findAll() {
-    return this.productoService.findAll();
-  }
+@Get('obtienetodo')
+async findAll(): Promise<Producto[]> {
+  return await this.productoService.findAll();
+}
+
 
   @Get(':id')
   findOne(@Param('id') id: string) {

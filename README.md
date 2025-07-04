@@ -1,8 +1,11 @@
 ## TODO 
 
 ## PRIMERO INSTALAR DEPENDENCIAS
+## npm install
 
 ## SEGUNDO LEVANTAR PROYECTO
+## npm run start
+
 
 ## TERCERO LA BD 
 
