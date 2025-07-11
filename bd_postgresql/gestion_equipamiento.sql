@@ -2,6 +2,7 @@
 -- TABLAS
 -- ================================
 
+
 CREATE TABLE Equipos (
   id serial PRIMARY KEY,
   codigo_interno varchar(255),
