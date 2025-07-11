@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ProductoModule } from './producto/producto.module';
+import { EquipoModule } from './equipos/equipos.module';
 import { BodegaModule } from './bodega/bodega.module';
 import { TipoProductoModule } from './tipo-producto/tipo-producto.module';
 import { PersonaModule } from './persona/persona.module';
@@ -32,7 +32,7 @@ import { PersonaModule } from './persona/persona.module';
       },
     }),
 
-    ProductoModule,
+    EquipoModule,
     BodegaModule,
     TipoProductoModule,
     PersonaModule,

@@ -1,7 +1,7 @@
 import { IsString, IsOptional, IsNotEmpty, IsDate, IsNumber, Length } from 'class-validator';
 import { Type } from 'class-transformer';
 
-export class CreateProductoDto {
+export class CreateEquipoDto {
   @IsString()
   @IsNotEmpty({ message: 'El modelo es obligatorio.' })
   @Length(1, 100)

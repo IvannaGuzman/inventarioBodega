@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Producto } from '../../producto/entities/producto.entity';
+import { Equipo } from '../../equipos/entities/equipos.entity';
 import { Bodega } from '../../bodega/entities/bodega.entity';
 
 @Entity('stock')
@@ -7,12 +7,12 @@ export class Stock {
   @PrimaryGeneratedColumn({ name: 'id_stock' })
   id: number;
 
-  @ManyToOne(() => Producto, (producto) => producto.stock)
-  @JoinColumn({ name: 'producto_id' }) // 👈 importante
-  producto: Producto;
+ // @ManyToOne(() => Equipo, (producto) => equipo.stock)
+  //@JoinColumn({ name: 'id_producto' }) // 👈 importante
+  producto: Equipo;
 
-  @ManyToOne(() => Bodega, (bodega) => bodega.stock)
-  @JoinColumn({ name: 'bodega_id' }) // 👈 importante
+ // @ManyToOne(() => Bodega, (bodega) => bodega.stock)
+ // @JoinColumn({ name: 'bodega_id' }) // 👈 importante
   bodega: Bodega;
 
   @Column()

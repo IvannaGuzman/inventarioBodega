@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne,JoinColumn } from 'typeorm';
-import { Producto } from '../../producto/entities/producto.entity';
+import { Equipo } from '../../equipos/entities/equipos.entity';
 import { Bodega } from '../../bodega/entities/bodega.entity';
 import { Persona } from '../../persona/entities/persona.entity';
 import { MovimientoTipo } from '../../movimiento_tipo/entities/movimiento_tipo.entity';
@@ -34,8 +34,8 @@ export class RegistroProducto {
   @Column({ name: 'fecha_creacion', type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   fechaCreacion: Date;
 
-  @ManyToOne(() => Producto, (producto) => producto.registros)
-  producto: Producto;
+  //@ManyToOne(() => Producto, (producto) => producto.registros)
+  //producto: Producto;
 
   @ManyToOne(() => Bodega, (bodega) => bodega.registros)
   bodegaOrigen: Bodega;
